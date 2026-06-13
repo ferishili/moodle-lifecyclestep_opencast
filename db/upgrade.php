@@ -46,7 +46,7 @@ function xmldb_lifecyclestep_opencast_upgrade($oldversion) {
     global $DB;
     $dbman = $DB->get_manager();
 
-    if ($oldversion < 2026031800) {
+    if ($oldversion < 2026021110) {
         $tags = get_config('lifecyclestep_opencast', 'workflowtags');
         if (empty($tags)) {
             $tags = \tool_lifecycle\step\opencast::DEFAULT_OPENCAST_WORKFLOW_TAGS;
@@ -86,7 +86,7 @@ function xmldb_lifecyclestep_opencast_upgrade($oldversion) {
         upgrade_plugin_savepoint(true, 2026031800, 'lifecyclestep', 'opencast');
     }
 
-    if ($oldversion < 2026040700) {
+    if ($oldversion < 2026031800) {
         // Define table lifecyclestep_opencast_process_status to be created.
         $table = new xmldb_table('lifecyclestep_opencast_process_status');
 
@@ -108,7 +108,7 @@ function xmldb_lifecyclestep_opencast_upgrade($oldversion) {
         }
 
         // Opencast savepoint reached.
-        upgrade_plugin_savepoint(true, 2026040700, 'lifecyclestep', 'opencast');
+        upgrade_plugin_savepoint(true, 2026031800, 'lifecyclestep', 'opencast');
     }
 
     return true;
