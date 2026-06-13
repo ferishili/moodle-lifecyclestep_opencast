@@ -83,7 +83,7 @@ function xmldb_lifecyclestep_opencast_upgrade($oldversion) {
         unset_config('ratelimiter', 'lifecyclestep_opencast');
 
         // Opencast step savepoint reached.
-        upgrade_plugin_savepoint(true, 2026031800, 'lifecyclestep', 'opencast');
+        upgrade_plugin_savepoint(true, 2026021110, 'lifecyclestep', 'opencast');
     }
 
     if ($oldversion < 2026031800) {
